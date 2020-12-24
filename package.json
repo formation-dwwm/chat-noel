@@ -4,7 +4,7 @@
     "author": "DWWM D-Buggers [Started by Sarox]",
     "description": "ma premiere application de tchat",
     "scripts": {
-        "tchat": "node index.js"
+        "tchat": "node server.js"
     },
     "dependencies": {
         "express": "^4.15.2",
