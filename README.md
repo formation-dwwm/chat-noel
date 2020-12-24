@@ -12,3 +12,6 @@
 
 Pour une compilation immédiate :
 `npm run tchat`
+
+Puis accéder à l'adresse :
+`http://localhost:3000`
