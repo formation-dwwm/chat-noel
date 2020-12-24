@@ -31,20 +31,27 @@ window.addEventListener("load", function () {
 
     // Fonctions d'affichage
     function displayChatMessage(messageData){
-        const msg = messageData.author.username + ": " + messageData.content;
-      
-        const $li = document.createElement('li');
-        const $br = document.createElement('br');
-        $li.innerText = msg;
-        $messageList.appendChild($li);
-        $messageList.appendChild($br);
+        appendHTML(`
+            <li>
+                <span style="font-weight: bold">${messageData.author.username}</span>
+                ${messageData.content}
+            </li>
+        `);
     }
 
     function displayNotificationMessage(message) {
-        const $li = document.createElement('li');
-        const $br = document.createElement('br');
-        $li.innerText = message;
-        $messageList.appendChild($li);
-        $messageList.appendChild($br);
+        appendHTML(`
+            <li>
+                ${message}
+            </li>
+        `);
+    }
+
+    function appendHTML(html){
+        const $dummyEl = document.createElement("div");
+        $dummyEl.innerHTML = html;
+        for(let $child of $dummyEl.children){
+            $messageList.appendChild($child);
+        }
     }
 });
